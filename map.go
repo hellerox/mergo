@@ -62,6 +62,7 @@ func mapStruct(dst, src reflect.Value, visited map[uintptr]*visit, depth int, co
 		srcValue := srcMap[key]
 		fieldName := changeInitialCase(key, unicode.ToUpper)
 		dstElement := dst.FieldByName(fieldName)
+		fmt.Println(key)
 
 		if dstElement == zeroValue {
 			// We discard it because the field doesn't exist.
